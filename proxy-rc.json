@@ -1,0 +1,29 @@
+{
+  "id": "ss-controller",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 1,
+    "replicaSelector": {"name": "ss"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "ss-controller",
+           "containers": [{
+             "name": "ss",
+             "image": "qdco.chinacloudapp.cn:5000/ss:1.0",
+             "ports": [{"containerPort": 1080}],
+           },{
+             "name": "polipo",
+             "image": "qdco.chinacloudapp.cn:5000/polipo:1.0",
+             "ports": [{"containerPort": 8123}],
+           }]
+         }
+       },
+       "labels": {
+         "name": "ss",
+       }
+      }},
+  "labels": {"name": "ss"}
+}

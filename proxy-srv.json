@@ -1,0 +1,14 @@
+{
+  "id": "ss",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 8123,
+  "containerPort": 8123,
+  "publicIPs":["172.18.0.13", "172.18.0.14"],
+  "selector": {
+    "name": "ss"
+  },
+  "labels": {
+    "name": "ss"
+  }
+}
